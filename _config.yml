@@ -1,0 +1,5 @@
+exclude:
+ - _handlebars_templates
+
+gems:
+ - jekyll-coffeescript

@@ -1,0 +1,19 @@
+<ul class="github-activity">
+  {{#each events as |event|}}
+    <li>
+      <span class="octicon mega-octicon octicon-{{event.octicon}}"></span>
+      <div class="heading">
+        <span title="{{event.created_at}}">{{event.created_at_from_now}}</span> in the <a href="https://github.com/{{event.repo.name}}">{{event.repo.shortName}}</a> repo
+      </div>
+      {{#if event.isPushEvent}}
+        <img src="{{event.actor.avatar_url}}s=60" height="30" alt="{{event.actor.login}}" style="clear: both;"> <a href="https://github.com/{{event.actor.login}}">{{event.actor.login}}</a> pushed {{event.numberOfCommits}} commit{{event.numberOfCommitsSuffix}} to the <code>{{event.branch}}</code> branch.
+      {{/if}}
+      {{#if event.isPullRequestEvent}}
+        <img src="{{event.actor.avatar_url}}s=60" height="30" alt="{{event.actor.login}}" style="clear: both;"> <a href="https://github.com/{{event.actor.login}}">{{event.actor.login}}</a> {{event.action}} pull request <a href="{{event.url}}">#{{event.pullRequestNumber}}: {{event.pullRequestTitle}}</a>.
+      {{/if}}
+      {{#if event.isIssueCommentevent}}
+        <img src="{{event.actor.avatar_url}}s=60" height="30" alt="{{event.actor.login}}" style="clear: both;"> <a href="https://github.com/{{event.actor.login}}">{{event.actor.login}}</a> commented on <a href="{{event.url}}">#{{event.issueNumber}}: {{event.issueTitle}}</a>
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
