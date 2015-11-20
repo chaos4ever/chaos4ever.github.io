@@ -1,1 +1,39 @@
-The chaos development web site will be published here. Any year now... :)
+---
+layout: default
+---
+
+<div class="col-xs-9">
+  <header>
+    {% capture content %}{% include index.md %}{% endcapture %}
+    {{ content | markdownify }}
+  </header>
+  <hr>
+  <section>
+    <h1 id="latest-github-contributions"><h1>Latest Github contributions <span class="mega-octicon octicon-mark-github"></span></h1>
+  </section>
+  <section>
+    <div id="github-activity"></div>
+  </section>
+</div>
+
+<div class="col-sm-3">
+  <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="95">
+    {% capture toc %}
+- [The chaos operating system](#the-chaos-operating-system)
+	- [Compiling chaos](#compiling-chaos)
+	- [Prerequisites](#prerequisites)
+	- [Setting up the dev environment](#setting-up-the-dev-environment)
+	- [On Linux or Mac](#on-linux-or-mac)
+	- [On Windows](#on-windows)
+	- [Compiling:](#compiling)
+	- [Running chaos](#running-chaos)
+	- [Authors](#authors)
+- [License](#license)
+	- [General](#general)
+	- [chaos License (3-clause BSD)](#chaos-license-3-clause-bsd)
+	- [License for storm/ia32/compiler_rt](#license-for-stormia32compilerrt)
+- [Latest GitHub contributions <span class="octicon octicon-mark-github"></span>](#latest-github-contributions)
+    {% endcapture %}
+    {{ toc | markdownify | add_nav_class }}
+  </nav>
+</div>

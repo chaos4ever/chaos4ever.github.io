@@ -1,0 +1,4 @@
+js/templates/*
+node_modules/*
+_site/*
+.jekyll-metadata
