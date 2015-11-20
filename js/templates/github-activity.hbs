@@ -1,0 +1,6 @@
+(function() {
+  define(['handlebars'], function() {
+    var github-activity = Handlebars.compile('<ul class=\"github-activity\">\n  {{#each events as |event|}}\n    <li><img src=\"{{event.actor.avatar_url}}s=60\" alt=\"{{event.actor.login}}\">{{event.actor.login}} | repo: {{event.repo.name}}<br>\n    {{event.type}}</li>\n  {{/each}}\n</ul>');
+    return github-activity;
+  });
+}).call(this);
