@@ -3,3 +3,5 @@ exclude:
 
 gems:
  - jekyll-coffeescript
+ - jemoji
+ 
