@@ -59,7 +59,7 @@ This should create a `chaos.iso`, if all worked correctly. Congratulations! You'
 * Create a tiny VM (256 megs of RAM will do, no hard drive etc) with the `chaos.iso` (or `chaos-0.0.x.iso` if you downloaded it from here) file as the CD drive.
 * Launch it. If all went well, you should get an image like this:
 
-![chaos 0.0.3 in action](https://raw.githubusercontent.com/chaos4ever/chaos/master/misc/chaos-0.0.3.png)
+<img src="https://raw.githubusercontent.com/chaos4ever/chaos/master/misc/chaos-0.0.3.png" alt="chaos 0.0.3 in action" class="screenshot">
 
 From there, just follow the instructions on the screen.
 
