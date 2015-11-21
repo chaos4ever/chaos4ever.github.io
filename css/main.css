@@ -277,6 +277,10 @@ nav.topmenu a:hover {
   h2,
   h3 {
     page-break-after: avoid; } }
+img.screenshot {
+  max-width: 100%;
+  height: auto; }
+
 .github-activity {
   list-style-type: none; }
 
