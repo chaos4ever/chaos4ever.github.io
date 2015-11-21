@@ -1,4 +1,5 @@
 exclude:
+ - node_modules
  - _handlebars_templates
 
 gems:
