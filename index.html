@@ -56,7 +56,7 @@
 
 <h2 id="compiling-chaos">Compiling chaos</h2>
 
-<p><strong>Note</strong>: If you just want to try things out, go straight to the <a href="https://github.com/chaos4ever/chaos/releases">Releases</a> page and download an <code>.iso</code> file. Then, skip down to “Running chaos” below.</p>
+<p><strong>Note</strong>: If you just want to try things out, go straight to the <a href="https://github.com/chaos4ever/chaos/releases">Releases</a> page and download an <code class="highlighter-rouge">.iso</code> file. Then, skip down to “Running chaos” below.</p>
 
 <h3 id="prerequisites">Prerequisites:</h3>
 
@@ -64,7 +64,7 @@
   <li>Linux, Mac OSX or Windows.</li>
   <li><a href="https://www.vagrantup.com/">Vagrant</a>. If you don’t know what this is, go check out their web page. It makes things like this much easier and smoother.</li>
   <li><a href="https://www.virtualbox.org/">VirtualBox</a></li>
-  <li>If Windows: an <code>ssh</code> client. (Install <a href="http://www.mingw.org/wiki/getting_started">mingw-get</a> and then select at least the <code>msys-openssh</code>, <code>msys-base</code> and <code>msys-bash</code> packages.)</li>
+  <li>If Windows: an <code class="highlighter-rouge">ssh</code> client. (Install <a href="http://www.mingw.org/wiki/getting_started">mingw-get</a> and then select at least the <code class="highlighter-rouge">msys-openssh</code>, <code class="highlighter-rouge">msys-base</code> and <code class="highlighter-rouge">msys-bash</code> packages.)</li>
 </ul>
 
 <h3 id="setting-up-the-dev-environment">Setting up the dev environment</h3>
@@ -78,47 +78,50 @@
 
 <ul>
   <li>Open a terminal program.</li>
-  <li>Change working directory to your working copy (<code>cd ~/git/chaos</code> or similar)</li>
+  <li>Change working directory to your working copy (<code class="highlighter-rouge">cd ~/git/chaos</code> or similar)</li>
   <li>Run the following commands:</li>
 </ul>
 
 <!-- Quirk to get the codeblock to render properly -->
 
-<pre><code>vagrant up
+<div class="highlighter-rouge"><pre class="highlight"><code>vagrant up
 vagrant ssh
 </code></pre>
+</div>
 
 <h4 id="on-windows">On Windows</h4>
 
 <ul>
-  <li>Launch <code>msys.bat</code> from the MSYS packages, as Administrator. <strong>Note</strong>: You <em>must</em> run <code>msys.bat</code> as Administrator. This is because symbolic links with VirtualBox is only supported when the VM is launched as an Administrator, and the <code>chaos</code> build process relies on symbolic links. Typical errors you can get if you do not do this right is “Protocol error” and similar. If this happens, do a <code>vagrant halt</code> and then retry the commands below in an admin <code>msys.bat</code> instead.)</li>
-  <li>Change working directory to your working copy (<code>cd /c/git/chaos</code>, assuming that you have the code in <code>c:\git\chaos</code>)
+  <li>Launch <code class="highlighter-rouge">msys.bat</code> from the MSYS packages, as Administrator. <strong>Note</strong>: You <em>must</em> run <code class="highlighter-rouge">msys.bat</code> as Administrator. This is because symbolic links with VirtualBox is only supported when the VM is launched as an Administrator, and the <code class="highlighter-rouge">chaos</code> build process relies on symbolic links. Typical errors you can get if you do not do this right is “Protocol error” and similar. If this happens, do a <code class="highlighter-rouge">vagrant halt</code> and then retry the commands below in an admin <code class="highlighter-rouge">msys.bat</code> instead.)</li>
+  <li>Change working directory to your working copy (<code class="highlighter-rouge">cd /c/git/chaos</code>, assuming that you have the code in <code class="highlighter-rouge">c:\git\chaos</code>)
 and run the following commands:</li>
 </ul>
 
 <!-- Quirk to get the codeblock to render properly -->
 
-<pre><code>vagrant up
+<div class="highlighter-rouge"><pre class="highlight"><code>vagrant up
 vagrant ssh
 </code></pre>
+</div>
 
 <h3 id="compiling">Compiling</h3>
 
-<p>After you have done <code>vagrant ssh</code>, you should now have a Linux session to your chaos development environment. It is a Linux machine, fully separated from your host system (be it Mac OS X, Windows or event Linux itself, but in the latter case you might as well run all of this on the host instead). You should now be in the <code>/vagrant</code> folder with easy access to the chaos source code residing on your host machine. Type the following commands to perform the compilation.</p>
+<p>After you have done <code class="highlighter-rouge">vagrant ssh</code>, you should now have a Linux session to your chaos development environment. It is a Linux machine, fully separated from your host system (be it Mac OS X, Windows or event Linux itself, but in the latter case you might as well run all of this on the host instead). You should now be in the <code class="highlighter-rouge">/vagrant</code> folder with easy access to the chaos source code residing on your host machine. Type the following commands to perform the compilation.</p>
 
-<pre><code>rake
+<div class="highlighter-rouge"><pre class="highlight"><code>rake
 rake install
 </code></pre>
+</div>
 
-<p>(Not all parts of the system has been converted to the <code>rake</code>-based compilation process yet, but we’re working on it. Feel free to send a patch/pull request if you add support for building some of the broken parts of the system.)</p>
+<p>(Not all parts of the system has been converted to the <code class="highlighter-rouge">rake</code>-based compilation process yet, but we’re working on it. Feel free to send a patch/pull request if you add support for building some of the broken parts of the system.)</p>
 
-<p>This should create a <code>chaos.iso</code>, if all worked correctly. Congratulations! You’re just one step away from having a fully working version of chaos running now. :)</p>
+<p>This should create a <code class="highlighter-rouge">chaos.iso</code>, if all worked correctly. Congratulations! You’re just one step away from having a fully working version of chaos running now. :)</p>
 
 <h3 id="running-chaos">Running chaos</h3>
 
 <ul>
   <li>Fire up your favorite VM software (VirtualBox, Parallels, VMware Player/Fusion, etc. Even Virtual PC will probably do).</li>
-  <li>Create a tiny VM (256 megs of RAM will do, no hard drive etc) with the <code>chaos.iso</code> (or <code>chaos-0.0.x.iso</code> if you downloaded it from here) file as the CD drive.</li>
+  <li>Create a tiny VM (256 megs of RAM will do, no hard drive etc) with the <code class="highlighter-rouge">chaos.iso</code> (or <code class="highlighter-rouge">chaos-0.0.x.iso</code> if you downloaded it from here) file as the CD drive.</li>
   <li>Launch it. If all went well, you should get an image like this:</li>
 </ul>
 
