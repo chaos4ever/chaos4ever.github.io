@@ -14,29 +14,10 @@ templates['github-activity.hbs'] = template({"1":function(container,depth0,helpe
     + "\">"
     + alias2(alias1(((stack1 = ((stack1 = blockParams[0][0]) != null ? stack1.repo : stack1)) != null ? stack1.shortName : stack1), depth0))
     + "</a> repo\n      </div>\n"
-    + ((stack1 = helpers["if"].call(alias3,((stack1 = blockParams[0][0]) != null ? stack1.isPushEvent : stack1),{"name":"if","hash":{},"fn":container.program(2, data, 0, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams})) != null ? stack1 : "")
-    + ((stack1 = helpers["if"].call(alias3,((stack1 = blockParams[0][0]) != null ? stack1.isPullRequestEvent : stack1),{"name":"if","hash":{},"fn":container.program(4, data, 0, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams})) != null ? stack1 : "")
-    + ((stack1 = helpers["if"].call(alias3,((stack1 = blockParams[0][0]) != null ? stack1.isIssueCommentevent : stack1),{"name":"if","hash":{},"fn":container.program(6, data, 0, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams})) != null ? stack1 : "")
+    + ((stack1 = helpers["if"].call(alias3,((stack1 = blockParams[0][0]) != null ? stack1.isPullRequestEvent : stack1),{"name":"if","hash":{},"fn":container.program(2, data, 0, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams})) != null ? stack1 : "")
+    + ((stack1 = helpers["if"].call(alias3,((stack1 = blockParams[0][0]) != null ? stack1.isIssueCommentevent : stack1),{"name":"if","hash":{},"fn":container.program(4, data, 0, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams})) != null ? stack1 : "")
     + "    </li>\n";
 },"2":function(container,depth0,helpers,partials,data,blockParams) {
-    var stack1, alias1=container.lambda, alias2=container.escapeExpression;
-
-  return "        <img src=\""
-    + alias2(alias1(((stack1 = ((stack1 = blockParams[1][0]) != null ? stack1.actor : stack1)) != null ? stack1.avatar_url : stack1), depth0))
-    + "s=60\" height=\"30\" alt=\""
-    + alias2(alias1(((stack1 = ((stack1 = blockParams[1][0]) != null ? stack1.actor : stack1)) != null ? stack1.login : stack1), depth0))
-    + "\" style=\"clear: both;\"> <a href=\"https://github.com/"
-    + alias2(alias1(((stack1 = ((stack1 = blockParams[1][0]) != null ? stack1.actor : stack1)) != null ? stack1.login : stack1), depth0))
-    + "\">"
-    + alias2(alias1(((stack1 = ((stack1 = blockParams[1][0]) != null ? stack1.actor : stack1)) != null ? stack1.login : stack1), depth0))
-    + "</a> pushed "
-    + alias2(alias1(((stack1 = blockParams[1][0]) != null ? stack1.numberOfCommits : stack1), depth0))
-    + " commit"
-    + alias2(alias1(((stack1 = blockParams[1][0]) != null ? stack1.numberOfCommitsSuffix : stack1), depth0))
-    + " to the <code>"
-    + alias2(alias1(((stack1 = blockParams[1][0]) != null ? stack1.branch : stack1), depth0))
-    + "</code> branch.\n";
-},"4":function(container,depth0,helpers,partials,data,blockParams) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
 
   return "        <img src=\""
@@ -56,7 +37,7 @@ templates['github-activity.hbs'] = template({"1":function(container,depth0,helpe
     + ": "
     + alias2(alias1(((stack1 = blockParams[1][0]) != null ? stack1.pullRequestTitle : stack1), depth0))
     + "</a>.\n";
-},"6":function(container,depth0,helpers,partials,data,blockParams) {
+},"4":function(container,depth0,helpers,partials,data,blockParams) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
 
   return "        <img src=\""

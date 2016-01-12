@@ -27,7 +27,8 @@
           event.octicon = 'git-commit';
           event.branch = event.payload.ref.replace('refs/heads/', '');
           event.numberOfCommits = event.payload.distinct_size;
-          return event.numberOfCommitsSuffix = event.numberOfCommits > 1 ? 's' : '';
+          event.numberOfCommitsSuffix = event.numberOfCommits > 1 ? 's' : '';
+          return event.message = _.last(event.payload.commits).message;
         } else if (event.isPullRequestEvent) {
           event.octicon = 'git-pull-request';
           pull_request = event.payload.pull_request;
@@ -45,7 +46,7 @@
         }
       });
       return events.filter(function(e) {
-        return e.isPushEvent || e.isPullRequestEvent || e.isIssueCommentevent;
+        return e.isPullRequestEvent || e.isIssueCommentevent;
       });
     };
 
