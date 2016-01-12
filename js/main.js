@@ -16,7 +16,7 @@
 
     GitHubActivityDownloader.prototype.postprocessEvents = function(events) {
       events.forEach(function(event) {
-        var issue, pull_request;
+        var issue, pull_request, ref;
         event.repo.shortName = event.repo.name.replace('chaos4ever/', '');
         event.isPushEvent = event.type === 'PushEvent';
         event.isPullRequestEvent = event.type === 'PullRequestEvent';
@@ -28,7 +28,7 @@
           event.branch = event.payload.ref.replace('refs/heads/', '');
           event.numberOfCommits = event.payload.distinct_size;
           event.numberOfCommitsSuffix = event.numberOfCommits > 1 ? 's' : '';
-          return event.message = _.last(event.payload.commits).message;
+          return event.message = (ref = _.last(event.payload.commits)) != null ? ref.message : void 0;
         } else if (event.isPullRequestEvent) {
           event.octicon = 'git-pull-request';
           pull_request = event.payload.pull_request;
