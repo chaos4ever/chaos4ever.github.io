@@ -21,6 +21,7 @@ class GitHubActivityDownloader
         event.branch = event.payload.ref.replace('refs/heads/', '')
         event.numberOfCommits = event.payload.distinct_size
         event.numberOfCommitsSuffix = if event.numberOfCommits > 1 then 's' else ''
+        event.message = _.last(event.payload.commits)?.message
       else if event.isPullRequestEvent
         event.octicon = 'git-pull-request'
         pull_request = event.payload.pull_request
@@ -35,7 +36,7 @@ class GitHubActivityDownloader
         event.issueNumber = issue.number
         event.issueTitle = issue.title
         event.url = issue.html_url
-    events.filter (e) -> e.isPushEvent || e.isPullRequestEvent || e.isIssueCommentevent
+    events.filter (e) -> e.isPullRequestEvent || e.isIssueCommentevent
 
 new GitHubActivityDownloader().download (events) ->
   template = Handlebars.templates['github-activity.hbs']
