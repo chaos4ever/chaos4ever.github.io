@@ -1,0 +1,14 @@
+---
+---
+
+// Inspired by Bootstrap 4 (alpha.6 as of writing), and gives us a somewhat better default font size than the one provided by our
+// messed-up mix of html5boilerplate and Bootstrap 3...
+
+html {
+    font-size: 100%;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+}
