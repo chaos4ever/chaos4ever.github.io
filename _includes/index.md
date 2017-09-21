@@ -75,10 +75,10 @@ This is an incomplete list of the authors of the chaos operating system, sorted 
 * [Johannes Ridderstedt](http://github.com/johannesl)
 * [Per Lundberg](http://github.com/perlun) - Previous core developer
 * Erik Moren
-* Gustav Sinder
-* Johan Thim - [servers/video/vga/vgalib.asm](https://github.com/chaos4ever/chaos/tree/master/servers/video/vga/vgalib.asm)
+* [Gustav Sinder](https://github.com/gs11)
+* [Johan Thim](http://users.mai.liu.se/johth11/) - [servers/video/vga/vgalib.asm](https://github.com/chaos4ever/chaos/tree/master/servers/video/vga/vgalib.asm)
 * [Jonas Tärnström](https://github.com/jskorpan) - did some work on the [video library](https://github.com/chaos4ever/chaos/tree/master/libraries/video) which was unfortunately never completed
-* Noah Williamsson
+* [Noah Williamsson](https://github.com/noahwilliamsson)
 * Andreas Zetterlund
 * Anders Öhrt - Previous core developer
 
