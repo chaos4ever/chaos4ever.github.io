@@ -40,4 +40,4 @@ class GitHubActivityDownloader
 
 new GitHubActivityDownloader().download (events) ->
   template = Handlebars.templates['github-activity.hbs']
-  $('#github-activity').html(template(events: events))
+  $('.github-activity').html(template(events: events))
