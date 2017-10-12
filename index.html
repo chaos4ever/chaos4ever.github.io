@@ -52,6 +52,12 @@
     
     <h1 id="the-chaos-operating-system">The chaos operating system</h1>
 
+<h2 id="latest-github-contributions">Latest GitHub contributions</h2>
+
+<div class="github-activity"></div>
+
+<h2 id="introduction">Introduction</h2>
+
 <p>Welcome to chaos. chaos is an operating system developed around the year 2000 for the x86 platform (also referred to as “ia32” in the codebase). It contains working protected mode/virtual memory initialization, processes and threads, interrupt support, PCI, text-based VGA and a simple IPv4 stack (supporting UDP, ARP and ICMP). Naturally, given the hobbyist nature of the project, none of the features we just mentioned is “complete” in the sense that it supports all features of the PCI bus, or all features of UDP, ICMP etc. Nonetheless, the system was at an earlier point stable to the point where it possible to e.g. use it for network bridging - you could run e.g. ssh “through” a machine running chaos. It would also reply to ICMP echo (i.e. “ping”) packets, as well as support outgoing ping packets to other machines.</p>
 
 <p>Having that said, there are a number of issues with the codebase which made us start the development of the new <a href="https://github.com/chaos4ever/stormG3">stormG3</a> kernel (which would replace the existing storm “G1” kernel. There was also a <a href="https://github.com/chaos4ever/stormG2">stormG2</a> project being undertaken but it was abandoned before being completed). The most critical issue with stormG1 is that the kernel leaks memory; the number of free pages decrease gradually over time. Because of this and the general feeling that the system would benefit from a major refactoring (hey, isn’t it always fun to rewrite your code, trying to get things better done the second time? :wink:) the storm G3 project was initiated, where we attempted to Do Things Right™ to a greater point than had been earlier done. Like many hobby/spare-time projects, the project was never finished and storm G3 is therefore currently in a very unfinished state. Nonetheless, feel free to check it out if you like.</p>
@@ -208,13 +214,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</p>
 
   </header>
-  <hr>
-  <section>
-    <h1 id="latest-github-contributions"><h1>Latest Github contributions <span class="mega-octicon octicon-mark-github"></span></h1>
-  </section>
-  <section>
-    <div id="github-activity"></div>
-  </section>
 </div>
 
 <div class="col-sm-3">
@@ -224,14 +223,22 @@ THE SOFTWARE.</p>
 <ul class="nav">
   <li><a href="#the-chaos-operating-system">The chaos operating system</a>
     <ul class="nav">
+      <li><a href="#latest-github-contributions">Latest GitHub contributions <span class="octicon octicon-mark-github"></span></a></li>
+    </ul>
+  </li>
+  <li><a href="#introduction">Introduction</a>
+    <ul class="nav">
       <li><a href="#compiling-chaos">Compiling chaos</a></li>
-      <li><a href="#prerequisites">Prerequisites</a></li>
-      <li><a href="#setting-up-the-dev-environment">Setting up the dev environment</a></li>
-      <li><a href="#on-linux-or-mac">On Linux or Mac</a></li>
-      <li><a href="#on-windows">On Windows</a></li>
-      <li><a href="#compiling">Compiling:</a></li>
-      <li><a href="#running-chaos">Running chaos</a></li>
-      <li><a href="#authors">Authors</a></li>
+      <li><a href="#prerequisites">Prerequisites</a>
+        <ul class="nav">
+          <li><a href="#setting-up-the-dev-environment">Setting up the dev environment</a></li>
+          <li><a href="#on-linux-or-mac">On Linux or Mac</a></li>
+          <li><a href="#on-windows">On Windows</a></li>
+          <li><a href="#compiling">Compiling:</a></li>
+          <li><a href="#running-chaos">Running chaos</a></li>
+          <li><a href="#authors">Authors</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><a href="#license">License</a>
@@ -241,7 +248,6 @@ THE SOFTWARE.</p>
       <li><a href="#license-for-stormia32compilerrt">License for storm/ia32/compiler_rt</a></li>
     </ul>
   </li>
-  <li><a href="#latest-github-contributions">Latest GitHub contributions <span class="octicon octicon-mark-github"></span></a></li>
 </ul>
 
 
