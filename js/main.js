@@ -57,7 +57,7 @@
   new GitHubActivityDownloader().download(function(events) {
     var template;
     template = Handlebars.templates['github-activity.hbs'];
-    return $('.github-activity').html(template({
+    return $('#github-activity').html(template({
       events: events
     }));
   });
