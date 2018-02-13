@@ -1,9 +1,5 @@
 # The chaos operating system
 
-## Latest GitHub contributions
-
-<div class="github-activity"></div>
-
 ## Introduction
 
 Welcome to chaos. chaos is an operating system developed around the year 2000 for the x86 platform (also referred to as "ia32" in the codebase).
@@ -152,3 +148,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+<div class="github-activity"></div>
