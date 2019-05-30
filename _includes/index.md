@@ -86,7 +86,7 @@ Want to help us out? Feel like contributing? Fork the project and start hacking 
 This is an incomplete list of the authors of the chaos operating system, sorted alphabetically on last name. If you feel your name should be on this list but you aren't - please let us know.
 
 * Martin Alvarez
-* [Henrik Doverhill](http://github.com/CaspecoHenrik) - Previous core developer
+* [Henrik Doverhill](http://github.com/doverhill) - Previous core developer
 * John Hennessy
 * [Johannes Ridderstedt](http://github.com/johannesl)
 * [Per Lundberg](http://github.com/perlun) - Previous core developer
