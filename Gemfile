@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'ffi', '~> 1.9.24'
 gem 'guard-livereload'
 gem 'guard'
 gem 'jekyll-coffeescript'
-gem 'jekyll'
+gem 'jekyll', '~> 3.6.3'
 gem 'jemoji'
+gem 'nokogiri', '~> 1.8.5'
 gem 'rake'

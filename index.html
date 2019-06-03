@@ -104,10 +104,9 @@
 
 <!-- Quirk to get the codeblock to render properly -->
 
-<div class="highlighter-rouge"><pre class="highlight"><code>vagrant up
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vagrant up
 vagrant ssh
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="on-windows">On Windows</h4>
 
@@ -119,19 +118,17 @@ and run the following commands:</li>
 
 <!-- Quirk to get the codeblock to render properly -->
 
-<div class="highlighter-rouge"><pre class="highlight"><code>vagrant up
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vagrant up
 vagrant ssh
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="compiling">Compiling</h3>
 
 <p>After you have done <code class="highlighter-rouge">vagrant ssh</code>, you should now have a Linux session to your chaos development environment. It is a Linux machine, fully separated from your host system (be it Mac OS X, Windows or event Linux itself, but in the latter case you might as well run all of this on the host instead). You should now be in the <code class="highlighter-rouge">/vagrant</code> folder with easy access to the chaos source code residing on your host machine. Type the following commands to perform the compilation.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>rake
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rake
 rake install
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>(Not all parts of the system has been converted to the <code class="highlighter-rouge">rake</code>-based compilation process yet, but we’re working on it. Feel free to send a patch/pull request if you add support for building some of the broken parts of the system.)</p>
 
@@ -157,7 +154,7 @@ rake install
 
 <ul>
   <li>Martin Alvarez</li>
-  <li><a href="http://github.com/CaspecoHenrik">Henrik Doverhill</a> - Previous core developer</li>
+  <li><a href="http://github.com/doverhill">Henrik Doverhill</a> - Previous core developer</li>
   <li>John Hennessy</li>
   <li><a href="http://github.com/johannesl">Johannes Ridderstedt</a></li>
   <li><a href="http://github.com/perlun">Per Lundberg</a> - Previous core developer</li>
@@ -203,7 +200,7 @@ All rights reserved.</p>
 
 <p><strong>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS IS’’ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</strong></p>
 
-<h2 id="license-for-stormia32compilerrt">License for storm/ia32/compiler_rt</h2>
+<h2 id="license-for-stormia32compiler_rt">License for storm/ia32/compiler_rt</h2>
 
 <p>Copyright © 2009-2013 by the contributors listed in <a href="https://github.com/chaos4ever/chaos/tree/master/storm/ia32/compiler_rt/CREDITS.TXT">CREDITS.TXT</a></p>
 
@@ -241,9 +238,9 @@ THE SOFTWARE.</p>
   <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="95">
     
     
-<ul class="nav">
+<ul>
   <li><a href="#the-chaos-operating-system">The chaos operating system</a>
-    <ul class="nav">
+    <ul>
       <li><a href="#compiling-chaos">Compiling chaos</a></li>
       <li><a href="#prerequisites">Prerequisites</a></li>
       <li><a href="#setting-up-the-dev-environment">Setting up the dev environment</a></li>
@@ -255,7 +252,7 @@ THE SOFTWARE.</p>
     </ul>
   </li>
   <li><a href="#license">License</a>
-    <ul class="nav">
+    <ul>
       <li><a href="#general">General</a></li>
       <li><a href="#chaos-license-3-clause-bsd">chaos License (3-clause BSD)</a></li>
       <li><a href="#license-for-stormia32compilerrt">License for storm/ia32/compiler_rt</a></li>
