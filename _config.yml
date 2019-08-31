@@ -1,3 +1,8 @@
+markdown:         redcarpet
+redcarpet:
+  extensions:
+    - autolink
+
 exclude:
  - node_modules
  - _handlebars_templates
@@ -5,4 +10,4 @@ exclude:
 gems:
  - jekyll-coffeescript
  - jemoji
- 
+
