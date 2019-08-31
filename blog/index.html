@@ -14,6 +14,8 @@
       {% for category in post.categories %} | <a href="{{ category | slugify }}">{{ category}}</a> {% endfor %}
 
       <p>{{ post.excerpt }}</p>
+
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Read more...</a>
     </li>
   {% endfor %}
 </ul>
