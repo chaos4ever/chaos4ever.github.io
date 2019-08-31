@@ -9,7 +9,7 @@ Some of the major features supported by chaos are:
 - Protected mode & virtual memory initialization
 - Process creation
 - Thread creation
-- Iterrupt handling (including redirecting interrupts to user-level threads)
+- Interrupt handling (including redirecting interrupts to user-level threads)
 - PCI support
 - Text-based VGA output
 - A simple IPv4 stack (supporting UDP, ARP and ICMP.)
