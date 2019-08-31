@@ -10,7 +10,7 @@
     <title>chaos development</title>
     <meta name="description" content="">
 
-    <link rel="canonical" href="/news/">
+    <link rel="canonical" href="/2018/11/12/chaos-0.2.0-released.html">
 
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="stylesheet" href="/css/normalize.min.css">
@@ -47,52 +47,36 @@
 
     <div class="container">
 
+<div class="site-section">
+  <div class="container">
+    <div class="post">
 
-<ul class="post-list">
-  
-    <li>
-      <h2>
-        <a class="post-link" href="/2019/08/29/chaos-0.3.0-released.html">chaos 0.3.0 released</a>
-      </h2>
+      <header class="post-header">
+        <h1 class="post-title">chaos 0.2.0 released</h1>
+        <p class="post-meta">
+          Nov 12, 2018 • Per Lundberg
+          
+        </p>
+      </header>
 
-      <span class="post-meta">Aug 29, 2019</span>
-      
+      <article class="post-content">
+        <p>Today, we are happy to announce the immediate availability of chaos 0.2.0</p>
 
-      <p><p>Today, we are proudly presenting a brand new &amp; shining release of chaos: version 0.3.0</p>
-</p>
+<p>Here is an excerpt from the release notes, as taken from <a href="https://github.com/chaos4ever/chaos/releases/tag/0.2.0">https://github.com/chaos4ever/chaos/releases/tag/0.2.0</a></p>
 
-      <a class="post-link" href="/2019/08/29/chaos-0.3.0-released.html">Read more...</a>
-    </li>
-  
-    <li>
-      <h2>
-        <a class="post-link" href="/2018/11/12/chaos-0.2.0-released.html">chaos 0.2.0 released</a>
-      </h2>
+<h2>General release notes</h2>
 
-      <span class="post-meta">Nov 12, 2018</span>
-      
-
-      <p><p>Today, we are happy to announce the immediate availability of chaos 0.2.0</p>
-</p>
-
-      <a class="post-link" href="/2018/11/12/chaos-0.2.0-released.html">Read more...</a>
-    </li>
-  
-    <li>
-      <h2>
-        <a class="post-link" href="/2015/11/20/new-web-site-published.html">New web site published</a>
-      </h2>
-
-      <span class="post-meta">Nov 20, 2015</span>
-      
-
-      <p><p>For the first time in <em>years</em> actually, chaos development has a web site. How cool is that!</p>
-</p>
-
-      <a class="post-link" href="/2015/11/20/new-web-site-published.html">Read more...</a>
-    </li>
-  
+<ul>
+<li>Fixed the bootup sequence to actually load <code>cluido</code> properly, from the ramdisk using the <code>boot</code>, <code>virtual_file_system</code>,<code>fat</code> and <code>initial_ramdisk</code> servers together. This item itself is worthy of its own story; I have blogged about it at great length here: <a href="http://perlun.eu.org/en/2017/12/30/chaos-why-is-the-boot-server-unable-to-read-the-startup-script">http://perlun.eu.org/en/2017/12/30/chaos-why-is-the-boot-server-unable-to-read-the-startup-script</a></li>
+<li>Changed bootloader from <code>grub-legacy</code> to GRUB 2, the current version of GNU GRUB. This helped in supporting the next bulletpoint, namely:</li>
+<li>Made it possible to boot from a USB pen device. Just use <code>cp</code> (on Linux) or Rufus (on Windows) to write the <code>.iso</code> to the proper device and you should be able to boot it. Please, give it a try and share any feedback about this here in our GitHub repo!</li>
+<li>Added CI building of Docker images on each push to <code>master</code>. Our image can be found <a href="https://hub.docker.com/r/chaosdev/chaos/">here</a>, and you should be able to run it by simply executing <code>docker run -it chaosdev/chaos</code>. (The container uses <code>qemu</code> under the hood, to simulate a physical machine.)</li>
 </ul>
+
+      </article>
+    </div>
+  </div>
+</div>
 
     </div>
 

@@ -37,7 +37,7 @@
         <a href="/"><img src="/img/chaos-logo.svg" height="75"></a>
         <nav class="topmenu">
           <ul>
-            <li><a href="/blog">blog</a></li>
+            <li><a href="/news">news</a></li>
             <li><a href="/#latest-github-contributions">activity</a></li>
             <li><a href="https://github.com/chaos4ever/chaos"><span class="octicon octicon-mark-github"></span> github</a></li>
           </ul>
@@ -50,162 +50,164 @@
 <div class="col-sm-9">
   <header>
     
-    <h1 id="the-chaos-operating-system">The chaos operating system</h1>
+    <h1>The chaos operating system</h1>
 
-<h2 id="introduction">Introduction</h2>
+<h2>Introduction</h2>
 
-<p>Welcome to chaos. chaos is an operating system developed around the year 2000 for the x86 platform (also referred to as “ia32” in the codebase).</p>
+<p>Welcome to chaos. chaos is an operating system developed around the year 2000 for the x86 platform (also referred to as "ia32" in the codebase).</p>
 
 <p>Some of the major features supported by chaos are:</p>
 
 <ul>
-  <li>Protected mode &amp; virtual memory initialization</li>
-  <li>Process creation</li>
-  <li>Thread creation</li>
-  <li>Iterrupt handling (including redirecting interrupts to user-level threads)</li>
-  <li>PCI support</li>
-  <li>Text-based VGA output</li>
-  <li>A simple IPv4 stack (supporting UDP, ARP and ICMP.)</li>
+<li>Protected mode &amp; virtual memory initialization</li>
+<li>Process creation</li>
+<li>Thread creation</li>
+<li>Interrupt handling (including redirecting interrupts to user-level threads)</li>
+<li>PCI support</li>
+<li>Text-based VGA output</li>
+<li>A simple IPv4 stack (supporting UDP, ARP and ICMP.)</li>
 </ul>
 
-<p>Naturally, given the hobbyist nature of the project, none of the features just mentioned is “complete” in the sense that it supports all features of the PCI bus, or all features of UDP, ICMP etc. Nonetheless, the system was at an earlier point stable to the point where it possible to e.g. use it for network bridging - you could run e.g. ssh “through” a machine running chaos. It would also reply to ICMP echo (i.e. “ping”) packets, as well as support outgoing ping packets to other machines.</p>
+<p>Naturally, given the hobbyist nature of the project, none of the features just mentioned is "complete" in the sense that it supports all features of the PCI bus, or all features of UDP, ICMP etc. Nonetheless, the system was at an earlier point stable to the point where it possible to e.g. use it for network bridging - you could run e.g. ssh "through" a machine running chaos. It would also reply to ICMP echo (i.e. "ping") packets, as well as support outgoing ping packets to other machines.</p>
 
-<p>Having that said, there are a number of issues with the codebase which made us start the development of the new <a href="https://github.com/chaos4ever/stormG3">stormG3</a> kernel (which would replace the existing storm “G1” kernel.) There was also a <a href="https://github.com/chaos4ever/stormG2">stormG2</a> project being undertaken but it was abandoned before being completed).</p>
+<p>Having that said, there are a number of issues with the codebase which made us start the development of the new <a href="https://github.com/chaos4ever/stormG3">stormG3</a> kernel (which would replace the existing storm "G1" kernel.) There was also a <a href="https://github.com/chaos4ever/stormG2">stormG2</a> project being undertaken but it was abandoned before being completed).</p>
 
-<p>The most critical issue with stormG1 is that the kernel leaks memory; the number of free pages decrease gradually over time. Because of this and the general feeling that the system would benefit from a major refactoring (hey, isn’t it always fun to rewrite your code, trying to get things better done the second time? :wink:) the storm G3 project was initiated, where we attempted to Do Things Right™ to a greater point than had been earlier done. Like many hobby/spare-time projects, the project was never finished and storm G3 is therefore currently in a very unfinished state. Nonetheless, feel free to check it out if you like.</p>
+<p>The most critical issue with stormG1 is that the kernel leaks memory; the number of free pages decrease gradually over time. Because of this and the general feeling that the system would benefit from a major refactoring (hey, isn't it always fun to rewrite your code, trying to get things better done the second time? <img class="emoji" title=":wink:" alt=":wink:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f609.png" height="20" width="20">) the storm G3 project was initiated, where we attempted to Do Things Right™ to a greater point than had been earlier done. Like many hobby/spare-time projects, the project was never finished and storm G3 is therefore currently in a very unfinished state. Nonetheless, feel free to check it out if you like.</p>
 
-<h2 id="compiling-chaos">Compiling chaos</h2>
+<h2>Compiling chaos</h2>
 
-<p><strong>Note</strong>: If you just want to try things out, go straight to the <a href="https://github.com/chaos4ever/chaos/releases">Releases</a> page and download an <code class="highlighter-rouge">.iso</code> file. Then, skip down to “Running chaos” below.</p>
+<p><strong>Note</strong>: If you just want to try things out, go straight to the <a href="https://github.com/chaos4ever/chaos/releases">Releases</a> page and download an <code>.iso</code> file. Then, skip down to "Running chaos" below.</p>
 
-<h3 id="prerequisites">Prerequisites:</h3>
+<h3>Prerequisites:</h3>
 
 <ul>
-  <li>Linux, Mac OSX or Windows.</li>
-  <li><a href="https://www.vagrantup.com/">Vagrant</a>. If you don’t know what this is, go check out their web page. It makes things like this much easier and smoother.</li>
-  <li><a href="https://www.virtualbox.org/">VirtualBox</a></li>
-  <li>If Windows: an <code class="highlighter-rouge">ssh</code> client. (Install <a href="http://www.mingw.org/wiki/getting_started">mingw-get</a> and then select at least the <code class="highlighter-rouge">msys-openssh</code>, <code class="highlighter-rouge">msys-base</code> and <code class="highlighter-rouge">msys-bash</code> packages.)</li>
+<li>Linux, Mac OSX or Windows.</li>
+<li>
+<a href="https://www.vagrantup.com/">Vagrant</a>. If you don't know what this is, go check out their web page. It makes things like this much easier and smoother.</li>
+<li><a href="https://www.virtualbox.org/">VirtualBox</a></li>
+<li>If Windows: an <code>ssh</code> client. (Install <a href="http://www.mingw.org/wiki/getting_started">mingw-get</a> and then select at least the <code>msys-openssh</code>, <code>msys-base</code> and <code>msys-bash</code> packages.)</li>
 </ul>
 
-<h3 id="setting-up-the-dev-environment">Setting up the dev environment</h3>
+<h3>Setting up the dev environment</h3>
 
 <ul>
-  <li>Fork the repo (using the Fork button in the upper right).</li>
-  <li>Clone your fork (using the clone button here at GitHub or straight in the command line).</li>
+<li>Fork the repo (using the Fork button in the upper right).</li>
+<li>Clone your fork (using the clone button here at GitHub or straight in the command line).</li>
 </ul>
 
-<h4 id="on-linux-or-mac">On Linux or Mac</h4>
+<h4>On Linux or Mac</h4>
 
 <ul>
-  <li>Open a terminal program.</li>
-  <li>Change working directory to your working copy (<code class="highlighter-rouge">cd ~/git/chaos</code> or similar)</li>
-  <li>Run the following commands:</li>
+<li>Open a terminal program.</li>
+<li>Change working directory to your working copy (<code>cd ~/git/chaos</code> or similar)</li>
+<li>Run the following commands:</li>
 </ul>
 
 <!-- Quirk to get the codeblock to render properly -->
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vagrant up
+<div class="highlight"><pre><code class="language-" data-lang="">vagrant up
 vagrant ssh
-</code></pre></div></div>
-
-<h4 id="on-windows">On Windows</h4>
+</code></pre></div>
+<h4>On Windows</h4>
 
 <ul>
-  <li>Launch <code class="highlighter-rouge">msys.bat</code> from the MSYS packages, as Administrator. <strong>Note</strong>: You <em>must</em> run <code class="highlighter-rouge">msys.bat</code> as Administrator. This is because symbolic links with VirtualBox is only supported when the VM is launched as an Administrator, and the <code class="highlighter-rouge">chaos</code> build process relies on symbolic links. Typical errors you can get if you do not do this right is “Protocol error” and similar. If this happens, do a <code class="highlighter-rouge">vagrant halt</code> and then retry the commands below in an admin <code class="highlighter-rouge">msys.bat</code> instead.)</li>
-  <li>Change working directory to your working copy (<code class="highlighter-rouge">cd /c/git/chaos</code>, assuming that you have the code in <code class="highlighter-rouge">c:\git\chaos</code>)
+<li>Launch <code>msys.bat</code> from the MSYS packages, as Administrator. <strong>Note</strong>: You <em>must</em> run <code>msys.bat</code> as Administrator. This is because symbolic links with VirtualBox is only supported when the VM is launched as an Administrator, and the <code>chaos</code> build process relies on symbolic links. Typical errors you can get if you do not do this right is "Protocol error" and similar. If this happens, do a <code>vagrant halt</code> and then retry the commands below in an admin <code>msys.bat</code> instead.)</li>
+<li>Change working directory to your working copy (<code>cd /c/git/chaos</code>, assuming that you have the code in <code>c:\git\chaos</code>)
 and run the following commands:</li>
 </ul>
 
 <!-- Quirk to get the codeblock to render properly -->
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vagrant up
+<div class="highlight"><pre><code class="language-" data-lang="">vagrant up
 vagrant ssh
-</code></pre></div></div>
+</code></pre></div>
+<h3>Compiling</h3>
 
-<h3 id="compiling">Compiling</h3>
-
-<p>After you have done <code class="highlighter-rouge">vagrant ssh</code>, you should now have a Linux session to your chaos development environment. It is a Linux machine, fully separated from your host system (be it Mac OS X, Windows or event Linux itself, but in the latter case you might as well run all of this on the host instead). You should now be in the <code class="highlighter-rouge">/vagrant</code> folder with easy access to the chaos source code residing on your host machine. Type the following commands to perform the compilation.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rake
+<p>After you have done <code>vagrant ssh</code>, you should now have a Linux session to your chaos development environment. It is a Linux machine, fully separated from your host system (be it Mac OS X, Windows or event Linux itself, but in the latter case you might as well run all of this on the host instead). You should now be in the <code>/vagrant</code> folder with easy access to the chaos source code residing on your host machine. Type the following commands to perform the compilation.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">rake
 rake install
-</code></pre></div></div>
+</code></pre></div>
+<p>(Not all parts of the system has been converted to the <code>rake</code>-based compilation process yet, but we're working on it. Feel free to send a patch/pull request if you add support for building some of the broken parts of the system.)</p>
 
-<p>(Not all parts of the system has been converted to the <code class="highlighter-rouge">rake</code>-based compilation process yet, but we’re working on it. Feel free to send a patch/pull request if you add support for building some of the broken parts of the system.)</p>
+<p>This should create a <code>chaos.iso</code>, if all worked correctly. Congratulations! You're just one step away from having a fully working version of chaos running now. :)</p>
 
-<p>This should create a <code class="highlighter-rouge">chaos.iso</code>, if all worked correctly. Congratulations! You’re just one step away from having a fully working version of chaos running now. :)</p>
-
-<h3 id="running-chaos">Running chaos</h3>
+<h3>Running chaos</h3>
 
 <ul>
-  <li>Fire up your favorite VM software (VirtualBox, Parallels, VMware Player/Fusion, etc. Even Virtual PC will probably do).</li>
-  <li>Create a tiny VM (256 megs of RAM will do, no hard drive etc) with the <code class="highlighter-rouge">chaos.iso</code> (or <code class="highlighter-rouge">chaos-0.0.x.iso</code> if you downloaded it from here) file as the CD drive.</li>
-  <li>Launch it. If all went well, you should get an image like this:</li>
+<li>Fire up your favorite VM software (VirtualBox, Parallels, VMware Player/Fusion, etc. Even Virtual PC will probably do).</li>
+<li>Create a tiny VM (256 megs of RAM will do, no hard drive etc) with the <code>chaos.iso</code> (or <code>chaos-0.0.x.iso</code> if you downloaded it from here) file as the CD drive.</li>
+<li>Launch it. If all went well, you should get an image like this:</li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/chaos4ever/chaos/master/misc/chaos-0.0.3.png" alt="chaos 0.0.3 in action" class="screenshot" /></p>
+<p><img src="https://raw.githubusercontent.com/chaos4ever/chaos/master/misc/chaos-0.0.3.png" alt="chaos 0.0.3 in action" class="screenshot"></p>
 
 <p>From there, just follow the instructions on the screen.</p>
 
-<p>Want to help us out? Feel like contributing? Fork the project and start hacking away! :smile: The easiest way to get in touch with is this GitHub page, for the moment. We may in the future put back our mailing lists and stuff, for public communication, but for now, make a fork and submit pull requests, create issues if you find issues that you think should be fixed, etc. <strong>Don’t be afraid</strong>, we usually don’t bite. :wink:</p>
+<p>Want to help us out? Feel like contributing? Fork the project and start hacking away! <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20"> The easiest way to get in touch with is this GitHub page, for the moment. We may in the future put back our mailing lists and stuff, for public communication, but for now, make a fork and submit pull requests, create issues if you find issues that you think should be fixed, etc. <strong>Don't be afraid</strong>, we usually don't bite. <img class="emoji" title=":wink:" alt=":wink:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f609.png" height="20" width="20"></p>
 
-<h2 id="authors">Authors</h2>
+<h2>Authors</h2>
 
-<p>This is an incomplete list of the authors of the chaos operating system, sorted alphabetically on last name. If you feel your name should be on this list but you aren’t - please let us know.</p>
+<p>This is an incomplete list of the authors of the chaos operating system, sorted alphabetically on last name. If you feel your name should be on this list but you aren't - please let us know.</p>
 
 <ul>
-  <li>Martin Alvarez</li>
-  <li><a href="http://github.com/doverhill">Henrik Doverhill</a> - Previous core developer</li>
-  <li>John Hennessy</li>
-  <li><a href="http://github.com/johannesl">Johannes Ridderstedt</a></li>
-  <li><a href="http://github.com/perlun">Per Lundberg</a> - Previous core developer</li>
-  <li>Erik Moren</li>
-  <li><a href="https://github.com/gs11">Gustav Sinder</a></li>
-  <li><a href="http://users.mai.liu.se/johth11/">Johan Thim</a> - <a href="https://github.com/chaos4ever/chaos/tree/master/servers/video/vga/vgalib.asm">servers/video/vga/vgalib.asm</a></li>
-  <li><a href="https://github.com/jskorpan">Jonas Tärnström</a> - did some work on the <a href="https://github.com/chaos4ever/chaos/tree/master/libraries/video">video library</a> which was unfortunately never completed</li>
-  <li><a href="https://github.com/noahwilliamsson">Noah Williamsson</a></li>
-  <li>Andreas Zetterlund</li>
-  <li>Anders Öhrt - Previous core developer</li>
+<li>Martin Alvarez</li>
+<li>
+<a href="http://github.com/doverhill">Henrik Doverhill</a> - Previous core developer</li>
+<li>John Hennessy</li>
+<li><a href="http://github.com/johannesl">Johannes Ridderstedt</a></li>
+<li>
+<a href="http://github.com/perlun">Per Lundberg</a> - Previous core developer</li>
+<li>Erik Moren</li>
+<li><a href="https://github.com/gs11">Gustav Sinder</a></li>
+<li>
+<a href="http://users.mai.liu.se/johth11/">Johan Thim</a> - <a href="https://github.com/chaos4ever/chaos/tree/master/servers/video/vga/vgalib.asm">servers/video/vga/vgalib.asm</a>
+</li>
+<li>
+<a href="https://github.com/jskorpan">Jonas Tärnström</a> - did some work on the <a href="https://github.com/chaos4ever/chaos/tree/master/libraries/video">video library</a> which was unfortunately never completed</li>
+<li><a href="https://github.com/noahwilliamsson">Noah Williamsson</a></li>
+<li>Andreas Zetterlund</li>
+<li>Anders Öhrt - Previous core developer</li>
 </ul>
 
-<h1 id="license">License</h1>
+<h1>License</h1>
 
-<h2 id="general">General</h2>
+<h2>General</h2>
 
-<p>(The license we use is commonly known as the BSD license, without advertising clause (also known as “3-clause”). Some  subdirectories in this directory may still contain references to the GPL since this is the license we used previously. However, the code can now be used under the BSD license - to the best of our knowledge, all major copyright holders have agreed to this license change. If you hold the copyright to some of the code herein and are in disagreement to this, please notify us immediately and we will work something out.)</p>
+<p>(The license we use is commonly known as the BSD license, without advertising clause (also known as "3-clause"). Some  subdirectories in this directory may still contain references to the GPL since this is the license we used previously. However, the code can now be used under the BSD license - to the best of our knowledge, all major copyright holders have agreed to this license change. If you hold the copyright to some of the code herein and are in disagreement to this, please notify us immediately and we will work something out.)</p>
 
 <p>The code in the following directories/files are to be treated as licensed under the <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU GPL</a> since they are derivates of code from the Linux kernel:</p>
 
 <ul>
-  <li><a href="https://github.com/chaos4ever/chaos/tree/master/libraries/string/inlines.h">libraries/string/inlines.h</a> (should be fixed).</li>
-  <li>servers/system/pci</li>
-  <li><a href="https://github.com/chaos4ever/chaos/tree/master/storm/ia32/cpuid.c">storm/ia32/cpuid.c</a> (should be rewritten so the whole kernel can be used under the BSD license).</li>
+<li>
+<a href="https://github.com/chaos4ever/chaos/tree/master/libraries/string/inlines.h">libraries/string/inlines.h</a> (should be fixed).</li>
+<li>servers/system/pci</li>
+<li>
+<a href="https://github.com/chaos4ever/chaos/tree/master/storm/ia32/cpuid.c">storm/ia32/cpuid.c</a> (should be rewritten so the whole kernel can be used under the BSD license).</li>
 </ul>
 
-<p>We encourage code that is written for chaos (servers, programs, libraries) to use the license below. This license allows us, and anyone else for that matter, to use your code freely, incorporate it in future versions of chaos and similar. However, unlike with the GNU GPL, we don’t force this choice upon you. The freedom is yours. Use it wisely.</p>
+<p>We encourage code that is written for chaos (servers, programs, libraries) to use the license below. This license allows us, and anyone else for that matter, to use your code freely, incorporate it in future versions of chaos and similar. However, unlike with the GNU GPL, we don't force this choice upon you. The freedom is yours. Use it wisely.</p>
 
-<hr />
+<hr>
 
-<h2 id="chaos-license-3-clause-bsd">chaos License (3-clause BSD)</h2>
+<h2>chaos License (3-clause BSD)</h2>
 
-<p>Copyright © 1999-2000, 2006-2007, 2013, 2015-2017 chaos development.<br />
+<p>Copyright © 1999 chaos development.<br>
 All rights reserved.</p>
 
 <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
 
 <ol>
-  <li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
-  <li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
-  <li>Neither the name of chaos development nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li>
+<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+<li>Neither the name of chaos development nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li>
 </ol>
 
-<p><strong>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS IS’’ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</strong></p>
+<p><strong>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</strong></p>
 
-<h2 id="license-for-stormia32compiler_rt">License for storm/ia32/compiler_rt</h2>
+<h2>License for storm/ia32/compiler_rt</h2>
 
 <p>Copyright © 2009-2013 by the contributors listed in <a href="https://github.com/chaos4ever/chaos/tree/master/storm/ia32/compiler_rt/CREDITS.TXT">CREDITS.TXT</a></p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the “Software”), to deal
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -214,7 +216,7 @@ furnished to do so, subject to the following conditions:</p>
 <p>The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.</p>
 
-<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -227,8 +229,10 @@ THE SOFTWARE.</p>
   </header>
   <hr>
   <section>
-    <h1 id="latest-github-contributions"><h1>Latest Github contributions <span class="mega-octicon octicon-mark-github"></span></h1>
-  </section>
+    <h1 id="latest-github-contributions">
+<h1>Latest Github contributions <span class="mega-octicon octicon-mark-github"></span>
+</h1>
+  </h1></section>
   <section>
     <div id="github-activity"></div>
   </section>
@@ -237,30 +241,32 @@ THE SOFTWARE.</p>
 <div class="col-sm-3">
   <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="95">
     
-    
-<ul>
-  <li><a href="#the-chaos-operating-system">The chaos operating system</a>
     <ul>
-      <li><a href="#compiling-chaos">Compiling chaos</a></li>
-      <li><a href="#prerequisites">Prerequisites</a></li>
-      <li><a href="#setting-up-the-dev-environment">Setting up the dev environment</a></li>
-      <li><a href="#on-linux-or-mac">On Linux or Mac</a></li>
-      <li><a href="#on-windows">On Windows</a></li>
-      <li><a href="#compiling">Compiling:</a></li>
-      <li><a href="#running-chaos">Running chaos</a></li>
-      <li><a href="#authors">Authors</a></li>
-    </ul>
-  </li>
-  <li><a href="#license">License</a>
-    <ul>
-      <li><a href="#general">General</a></li>
-      <li><a href="#chaos-license-3-clause-bsd">chaos License (3-clause BSD)</a></li>
-      <li><a href="#license-for-stormia32compilerrt">License for storm/ia32/compiler_rt</a></li>
-    </ul>
-  </li>
-  <li><a href="#latest-github-contributions">Latest GitHub contributions <span class="octicon octicon-mark-github"></span></a></li>
-</ul>
+<li>
+<a href="#the-chaos-operating-system">The chaos operating system</a>
 
+<ul>
+<li><a href="#compiling-chaos">Compiling chaos</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#setting-up-the-dev-environment">Setting up the dev environment</a></li>
+<li><a href="#on-linux-or-mac">On Linux or Mac</a></li>
+<li><a href="#on-windows">On Windows</a></li>
+<li><a href="#compiling">Compiling:</a></li>
+<li><a href="#running-chaos">Running chaos</a></li>
+<li><a href="#authors">Authors</a></li>
+</ul>
+</li>
+<li>
+<a href="#license">License</a>
+
+<ul>
+<li><a href="#general">General</a></li>
+<li><a href="#chaos-license-3-clause-bsd">chaos License (3-clause BSD)</a></li>
+<li><a href="#license-for-stormia32compilerrt">License for storm/ia32/compiler_rt</a></li>
+</ul>
+</li>
+<li><a href="#latest-github-contributions">Latest GitHub contributions <span class="octicon octicon-mark-github"></span></a></li>
+</ul>
 
   </nav>
 </div>
@@ -269,7 +275,7 @@ THE SOFTWARE.</p>
 
     <div class="footer-container">
       <footer style="text-align: center">
-        &copy; Copyright chaos development 1999-2017. All rights reserved.
+        © Copyright chaos development 1999-2019. All rights reserved.
       </footer>
     </div>
 
