@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/chaos4ever/chaos4ever.github.io#readme",
   "devDependencies": {
-    "handlebars": "^4.0.4"
+    "handlebars": "^4.3.0"
   }
 }
