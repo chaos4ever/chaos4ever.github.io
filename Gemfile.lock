@@ -80,7 +80,7 @@ GEM
     minitest (5.11.3)
     multi_json (1.11.2)
     nenv (0.2.0)
-    nokogiri (1.10.4)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     notiffany (0.0.8)
       nenv (~> 0.1)
