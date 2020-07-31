@@ -5,7 +5,7 @@ Web site for chaos development. Uses the [Jekyll](http://jekyllrb.com/) engine.
 ## Repository structure
 
 - `src` branch: Holds the source code for the web site.
-- `master` branch: Holds the "compiled" version of the web site, that is published to e.g. http://chaosdev.io and http://chaos4ever.github.io
+- `master` branch: Holds the "compiled" version of the web site, that is published to e.g. https://chaosdev.io
 
 ## Running the site locally
 
