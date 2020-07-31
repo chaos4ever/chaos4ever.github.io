@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>chaos development</title>
+    <meta name="description" content="">
+
+    <link rel="canonical" href="http://localhost:4000/2018/11/12/chaos-0.2.0-released.html">
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/css/normalize.min.css">
+    <link rel="stylesheet" href="/assets/octicons/octicons.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/assets/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-overrides.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <script src="/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="/js/vendor/moment.min.js"></script>
+    <script src="/js/vendor/handlebars.runtime-v4.0.4.js"></script>
+    <script src="/js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/js/vendor/lodash.min.js"></script>
+    <script src="/js/templates/github-activity.tpl.js"></script>
+  </head>
+  <body data-spy="scroll">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="header-container">
+      <header class="wrapper clearfix">
+        <a href="/"><img src="/img/chaos-logo.svg" height="75"></a>
+        <nav class="topmenu">
+          <ul>
+            <li><a href="/news">news</a></li>
+            <li><a href="/#latest-github-contributions">activity</a></li>
+            <li><a href="https://github.com/chaos4ever/chaos"><span class="octicon octicon-mark-github"></span> github</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div class="container">
+
+<div class="site-section">
+  <div class="container">
+    <div class="post">
+
+      <header class="post-header">
+        <h1 class="post-title">chaos 0.2.0 released</h1>
+        <p class="post-meta">
+          Nov 12, 2018 • Per Lundberg
+          
+        </p>
+      </header>
+
+      <article class="post-content">
+        <p>Today, we are happy to announce the immediate availability of chaos 0.2.0</p>
+
+<p>Here is an excerpt from the release notes, as taken from <a href="https://github.com/chaos4ever/chaos/releases/tag/0.2.0">https://github.com/chaos4ever/chaos/releases/tag/0.2.0</a></p>
+
+<h2>General release notes</h2>
+
+<ul>
+<li>Fixed the bootup sequence to actually load <code>cluido</code> properly, from the ramdisk using the <code>boot</code>, <code>virtual_file_system</code>,<code>fat</code> and <code>initial_ramdisk</code> servers together. This item itself is worthy of its own story; I have blogged about it at great length here: <a href="http://perlun.eu.org/en/2017/12/30/chaos-why-is-the-boot-server-unable-to-read-the-startup-script">http://perlun.eu.org/en/2017/12/30/chaos-why-is-the-boot-server-unable-to-read-the-startup-script</a></li>
+<li>Changed bootloader from <code>grub-legacy</code> to GRUB 2, the current version of GNU GRUB. This helped in supporting the next bulletpoint, namely:</li>
+<li>Made it possible to boot from a USB pen device. Just use <code>cp</code> (on Linux) or Rufus (on Windows) to write the <code>.iso</code> to the proper device and you should be able to boot it. Please, give it a try and share any feedback about this here in our GitHub repo!</li>
+<li>Added CI building of Docker images on each push to <code>master</code>. Our image can be found <a href="https://hub.docker.com/r/chaosdev/chaos/">here</a>, and you should be able to run it by simply executing <code>docker run -it chaosdev/chaos</code>. (The container uses <code>qemu</code> under the hood, to simulate a physical machine.)</li>
+</ul>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <div class="footer-container">
+      <footer style="text-align: center">
+        &copy; Copyright chaos development 1999-2019. All rights reserved.
+      </footer>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+    <script src="/assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="/js/main.js"></script>
+
+    <script type="text/javascript">
+      if (location.host.split(':')[0] == 'localhost') {
+        document.write('<script src="http://localhost:35729/livereload.js"><\/script>');
+      }
+    </script>
+  </body>
+</html>
+
