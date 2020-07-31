@@ -13,9 +13,7 @@
       <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
       {% for category in post.categories %} | <a href="{{ category | slugify }}">{{ category}}</a> {% endfor %}
 
-      <p>{{ post.excerpt }}</p>
-
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Read more...</a>
+      <p>{{ post.content }}</p>
     </li>
   {% endfor %}
 </ul>
