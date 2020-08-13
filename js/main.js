@@ -42,7 +42,7 @@
           issue = event.payload.issue;
           event.issueNumber = issue.number;
           event.issueTitle = issue.title;
-          return event.url = issue.html_url;
+          return event.url = event.payload.comment.html_url;
         }
       });
       return events.filter(function(e) {
