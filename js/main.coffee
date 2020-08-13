@@ -35,7 +35,8 @@ class GitHubActivityDownloader
         issue = event.payload.issue
         event.issueNumber = issue.number
         event.issueTitle = issue.title
-        event.url = issue.html_url
+        event.url = event.payload.comment.html_url
+
     events.filter (e) -> e.isPullRequestEvent || e.isIssueCommentevent
 
 new GitHubActivityDownloader().download (events) ->
