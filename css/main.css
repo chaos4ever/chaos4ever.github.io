@@ -122,10 +122,66 @@ nav.topmenu a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+/* Style the navigation menu */
+.topnav-mobile {
+  overflow: hidden;
+  background-color: #E5ECFB;
+  position: relative; }
+
+.topnav-mobile .logo {
+  text-align: center;
+  padding: 10px 16px; }
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav-mobile #topmenu-mobile {
+  display: none; }
+
+/* Style navigation menu links */
+.topnav-mobile a {
+  color: black;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  display: block; }
+
+/* Style the hamburger menu */
+.topnav-mobile a.icon {
+  background: #E5ECFB;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+/* Add a grey background color on mouse-over */
+.topnav-mobile a:hover {
+  background-color: #ddd;
+  color: black; }
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #B8CAED;
+  color: black; }
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+@media only screen and (max-width: 479px) {
+  nav.topmenu {
+    display: none; }
+
+  .xs-block {
+    display: block; }
+
+  .sm-block {
+    display: none; } }
 @media only screen and (min-width: 480px) {
+  .xs-block {
+    display: none; }
+
+  .sm-block {
+    display: block; }
+
   /* ====================
       INTERMEDIATE: Menu
      ==================== */

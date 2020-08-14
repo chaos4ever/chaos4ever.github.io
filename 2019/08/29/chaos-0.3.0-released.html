@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/assets/bootstrap-3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-overrides.css">
     <link rel="stylesheet" href="/css/docs.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="/js/vendor/moment.min.js"></script>
@@ -32,7 +33,27 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="header-container">
+    <!-- Navigation menu, mobile version -->
+    <div class="header-mobile-container xs-block">
+      <header class="clearfix topnav-mobile">
+        <a href="/" class="active logo"><img src="/img/chaos-logo.svg" height="34"></a>
+
+        <!-- Navigation links (hidden by default) -->
+        <div id="topmenu-mobile">
+          <a href="/">home</a>
+          <a href="/news">news</a>
+          <a href="/github-activity">activity</a>
+          <a href="https://github.com/chaos4ever/chaos">github</a>
+      </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </header>
+    </div>
+
+    <!-- Navigation menu, desktop version -->
+    <div class="header-container sm-block">
       <header class="wrapper clearfix">
         <a href="/"><img src="/img/chaos-logo.svg" height="75"></a>
         <nav class="topmenu">
@@ -87,7 +108,14 @@
     </div>
 
     <div class="footer-container">
-      <footer style="text-align: center">
+      <!-- On mobile, the footer needs to be split onto multiple lines
+           to provide more control over the line break. -->
+      <footer style="margin-left: 20px; margin-right: 20px;" class="xs-block">
+        © Copyright chaos development 1999-2020.<br>
+        All rights reserved.
+      </footer>
+
+      <footer style="text-align: center" class="sm-block">
         © Copyright chaos development 1999-2020. All rights reserved.
       </footer>
     </div>

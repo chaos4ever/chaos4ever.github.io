@@ -1,3 +1,6 @@
+/// <reference path="vendor/jquery-1.11.3.min.js" />
+/// <reference path="vendor/moment.min.js" />
+
 (function () {
     var GitHubActivityDownloader;
 
@@ -59,3 +62,14 @@
     });
 
 }).call(this);
+
+function toggleMenu() {
+    var x = document.getElementById('topmenu-mobile');
+
+    if (x.style.display === 'block') {
+        x.style.display = 'none';
+    }
+    else {
+        x.style.display = 'block';
+    }
+}
