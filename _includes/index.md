@@ -14,7 +14,7 @@ Some of the major features supported by chaos are:
 - Text-based VGA output
 - A simple IPv4 stack (supporting UDP, ARP and ICMP.)
 
-Naturally, given the hobbyist nature of the project, none of the features just mentioned is "complete" in the sense that it supports all features of the PCI bus, or all features of UDP, ICMP etc. Nonetheless, the system was at an earlier point stable to the point where it possible to e.g. use it for network bridging - you could run e.g. ssh "through" a machine running chaos. It would also reply to ICMP echo (i.e. "ping") packets, as well as support outgoing ping packets to other machines.
+Naturally, given the hobbyist nature of the project, none of the features just mentioned is "complete" in the sense that it supports all features of the PCI bus, or all features of UDP, ICMP etc. Nonetheless, the system was at an earlier point stable to the point where it was possible to e.g. use it for network bridging - you could run e.g. ssh "through" a machine running chaos. It would also reply to ICMP echo (i.e. "ping") packets, as well as support outgoing ping packets to other machines.
 
 Having that said, there are a number of issues with the codebase which made us start the development of the new [stormG3](https://github.com/chaos4ever/stormG3) kernel (which would replace the existing storm "G1" kernel.) There was also a [stormG2](https://github.com/chaos4ever/stormG2) project being undertaken but it was abandoned before being completed).
 
